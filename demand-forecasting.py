@@ -242,3 +242,31 @@ input_shape = (3, data.shape[1])
 model = seq2seq(data.shape[1], 4, input_shape)
 model.compile(loss='mse', optimizer='adam',metrics=['acc'])
 model.summary()
+
+
+history = model.fit(x_train, y_train, batch_size=3, epochs=70)
+
+mport math 
+print('-' * 100)
+train_score = model.evaluate(x=x_train, y=y_train, batch_size=3, verbose=0)
+print('Train Score: %.8f MSE (%.8f RMSE ) , %.8f  ACC' % (train_score[0], math.sqrt(train_score[0]),train_score[1]*100)  )
+
+
+validate_score = model.evaluate(x=x_validate, y=y_validate, batch_size=3, verbose=0)
+print('Validation Score: %.8f MSE (%.8f RMSE ) , %.8f  ACC' % (validate_score[0], math.sqrt(validate_score[0]),validate_score[1]*100))
+
+
+train_predict = model.predict(x_train)
+validate_predict = model.predict(x_validate)
+
+def inverse_normalize_data(data, scaler):
+    for i in range(len(data)):
+        data[i] = scaler.inverse_transform(data[i])
+
+    return data
+
+
+train_predict = inverse_normalize_data(train_predict, scaler)
+y_train = inverse_normalize_data(y_train, scaler)
+validate_predict = inverse_normalize_data(validate_predict, scaler)
+y_validate = inverse_normalize_data(y_validate, scaler)
