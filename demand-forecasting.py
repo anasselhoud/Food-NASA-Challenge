@@ -16,7 +16,7 @@ from numpy import array
 import matplotlib.pyplot as plt 
 
 
-CORdata = pd.read_csv('coronavirus.csv')
+CORdata = pd.read_csv('demands.csv')
 
 from random import randint
 from numpy import array
