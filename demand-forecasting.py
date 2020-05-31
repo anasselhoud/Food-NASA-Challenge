@@ -2,6 +2,8 @@
 This model used in our challenge, aims to forecast the food demand of next 3months based on the last years demand.  
 This will help the warehouses workers have an idea of the decisions to take based on AI models. The connected warehouses
 is an innovative idea proposed in our solution for the NASA Challenge.
+
+We use Long Short Term Memory model.
 '''
 
 
