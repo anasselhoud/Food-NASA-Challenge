@@ -270,3 +270,19 @@ train_predict = inverse_normalize_data(train_predict, scaler)
 y_train = inverse_normalize_data(y_train, scaler)
 validate_predict = inverse_normalize_data(validate_predict, scaler)
 y_validate = inverse_normalize_data(y_validate, scaler)
+
+
+
+day = ['First Month','Second Month','Third Month','Fourth Month']
+
+fig = plt.figure(figsize=(20, 15))
+ax1 = fig.add_subplot(231)
+ax2 = fig.add_subplot(232)
+ax3 = fig.add_subplot(233)
+
+ax1.plot(day,y_validate[:,:,1][3],color='red',label='Confirmed Demand')
+ax1.plot(day,validate_predict[:,:,1][3],color='maroon',label='Predicted Demand')
+ax1.title.set_text("Confirmed per/day")
+ax1.legend()
+
+plt.show()
