@@ -7,3 +7,5 @@ This repository contains some useful algorithms we mentioned in our solutions fo
 - Demand Forecasting: this model aims to forecast the food demand of next 3months based on the last years demand.  
 This will help the warehouses workers have an idea of the decisions to take based on AI models. The connected warehouses
 is an innovative idea proposed in our solution for the NASA Challenge.
+
+- Agri-Identifier: This model is included with the drone solution. It can identify the best place to plan a specific fruit or vegetable based on weather and soil data. 
